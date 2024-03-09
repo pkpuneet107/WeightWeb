@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+{% block title %}Homepage{% endblock %}
+{% block content %}
+<head>
+    <title>Animated Login Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<div class="container mt-4">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <h2 class="text-2xl font-bold">Enter Your Details</h2>
+
+        <div class="form-group">
+            {{ form.age.label(class="form-label") }}
+            {{ form.age(class="form-control") }}
+            {% if form.age.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.age.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form.height.label(class="form-label") }}
+            {{ form.height(class="form-control") }}
+            {% if form.height.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.height.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form.sex.label(class="form-label") }}
+            {{ form.sex(class="form-control") }}
+            {% if form.sex.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.sex.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form.activity_level.label(class="form-label") }}
+            {{ form.activity_level(class="form-control") }}
+            {% if form.activity_level.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.activity_level.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form.current_weight.label(class="form-label") }}
+            {{ form.current_weight(class="form-control") }}
+            {% if form.current_weight.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.current_weight.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form.goal_weight.label(class="form-label") }}
+            {{ form.goal_weight(class="form-control") }}
+            {% if form.goal_weight.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.goal_weight.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    {% if logged_in and show_results %}
+    <div id="results">
+        <p>Recommended Macros:
+            Protein: {{ protein_macros }}
+            Fat: {{ fat_macros }}
+            Carbs: {{ carb_macros }}</p>
+        <p>Weeks to Goal: {{ weeks_to_goal }}</p>
+        <p>New Calorie Goal: {{ new_calorie_goal }}</p>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+    function showResults() {
+        document.getElementById("results").style.display = "block";
+    }
+</script>
+
+{% endblock %}
