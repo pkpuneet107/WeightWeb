@@ -1,5 +1,5 @@
-from flaskblog import app
-from flaskblog import db, migrate 
+from flaskWeb import app
+from flaskWeb import db, migrate 
 
 if __name__ == '__main__':
     with app.app_context():
