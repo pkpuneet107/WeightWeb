@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Verdana", sans-serif;
   overflow: hidden;
   background-color: #0277BD; /* Carolina blue background */
 }
@@ -50,7 +50,7 @@ form {
 
 .login-content h2 {
   margin: 15px 0;
-  color: #333;
+  color: black;
   text-transform: uppercase;
   font-size: 2.9rem;
 }
@@ -137,7 +137,7 @@ form {
   padding: 0.5rem 0.7rem;
   font-size: 1.2rem;
   color: black;
-  font-family: "Poppins", sans-serif;
+  font-family: "Verdana", sans-serif;
 }
 
 .input-div.pass {
@@ -168,7 +168,7 @@ a:hover {
     background-color: black; /* Set button background to black */
     font-size: 1.2rem;
     color: #fff; /* Set text color to white */
-    font-family: "Poppins", sans-serif;
+    font-family: "Verdana", sans-serif;
     text-transform: uppercase;
     margin: 1rem 0;
     cursor: pointer;

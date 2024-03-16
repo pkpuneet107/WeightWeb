@@ -1,7 +1,7 @@
 
 /* Typography */
 html {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Verdana', sans-serif;
 }
 main {
 	background: #0277BD;
@@ -36,7 +36,7 @@ main {
 
 .links-social a {
     font-size: 2em; /* Adjust the size as needed */
-    font-family: 'Papyrus', fantasy; /* This is the unique font for the links */
+    font-family: 'Verdana', sans-serif; /* This is the unique font for the links */
     text-decoration: none;
     color: #FFF; /* Adjust the color as needed */
     margin: 10px; /* Adjust spacing as needed */
@@ -64,7 +64,7 @@ main {
 }
 
 main > .intro {
-	font-family: 'Reem Kufi', sans-serif;
+	font-family: 'Verdana', sans-serif;
 	font-size: 8em;
 	font-weight: 1000;
 }
