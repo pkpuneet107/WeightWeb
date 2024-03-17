@@ -12,6 +12,7 @@
         {% endfor %}
         <section class="user-info">
             {% for item in values %}
+
             <h2>Your Health Metrics</h2>
             <div class="metrics">
                 <div class="metric">
@@ -34,6 +35,9 @@
                     <span class="metric-title">Weeks to Goal:</span>
                     <span class="metric-value">{{ item.weeks_to_goal| int }}</span>
                 </div>
+                {% if item.new_calorie_goal == 0 %}
+                <p>Need to be in a class</p>
+                {% endif %}
             </div>
             {% endfor %}
         </section>
