@@ -10,6 +10,26 @@ body {
   background-color: #0277BD; /* Carolina blue background */
 }
 
+main > .intro {
+	font-family: 'Verdana', sans-serif;
+	font-size: 8em;
+    font-weight: 1000;
+    color: white
+}
+main > .tagline {
+	font-size: 4rem;
+  font-family: 'Verdana', sans-serif;
+	margin: 7rem 0;
+	font-weight: 100;
+}
+
+.user-info h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center; /* Center the text */
+    color: white; /* Set text color to white */
+}
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -173,6 +193,32 @@ a:hover {
     margin: 1rem 0;
     cursor: pointer;
     transition: 0.5s;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.metric {
+  background-color: #0277BD;
+  border: 1px solid #ffff;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.metric-title {
+  font-weight: bold;
+  display: block;
+  color: #ffff;
+  margin-bottom: 5px;
+}
+
+.metric-value {
+  color: #ffff;
+  font-size: 1.2em;
 }
 
 .btn:hover {
