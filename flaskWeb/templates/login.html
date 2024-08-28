@@ -1,77 +1,66 @@
-{% extends "layout.html" %}
-
-{% block content %}
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Animated Login Form</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/color.css') }}" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Kool Form Pack | Login page</title>
+
+    <!-- CSS FILES -->                
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200&family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="static/css/tooplate-kool-form-pack.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-      <div class="img"> <!-- If you have an image for this div, insert it here -->
-      </div>
-      <div class="login-content">
-        <form method="POST" action="">
-            {{ form.hidden_tag() }}
-            <img src="{{ url_for('static', filename='images/avatar.png') }}" class="avatarpic" />
-            <br><br>
-            <div class="input-div one">
-                <div class="i">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <div class="div">
-                    {{ form.email.label(class="form-control-label") }}
-                    {% if form.email.errors %}
-                        {{ form.email(class="input is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.email.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
+
+<main>
+    <section class="hero-section d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-12 mx-auto">
+                    <form class="custom-form login-form" role="form" method="post">
+                        <h2 class="hero-title text-center mb-4 pb-2">Login Form</h2>
+                        <div class="form-floating mb-4 p-0">
+                            <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required="">
+                            <label for="email">Email address</label>
                         </div>
-                    {% else %}
-                        {{ form.email(class="input") }}
-                    {% endif %}
-                </div>
-            </div>
-            <div class="input-div pass">
-                <div class="i">
-                    <i class="fas fa-lock"></i>
-                </div>
-                <div class="div">
-                    {{ form.password.label(class="form-control-label") }}
-                    {% if form.password.errors %}
-                        {{ form.password(class="input is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.password.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
+                        <div class="form-floating p-0">
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required="">
+                            <label for="password">Password</label>
                         </div>
-                    {% else %}
-                        {{ form.password(class="input") }}
-                    {% endif %}
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">Remember me</label>
+                        </div>
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-lg-5 col-12">
+                                <button type="submit" class="form-control">Login</button>
+                            </div>
+                            <div class="col-lg-5 col-12">
+                                <a href="{{url_for('register') }}" class="btn custom-btn custom-border-btn">Register</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="form-check">
-                {{ form.remember(class="form-check-input") }}
-                {{ form.remember.label(class="form-check-label") }}
-            </div>
-            <input type="submit" class="btn" value="Login" />
-            <small class="text-muted ml-2">
-                <a href="#">Forgot Password?</a>
-            </small>
-            <div class="bottom-left-text">
-                <small class="text-muted">
-                <a href="{{ url_for('register') }}">Sign Up Now</a>
-                </small>
-            </div>
-        </form>
-      </div>
-    </div>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
-  </body>
+        </div>
+        <div class="video-wrap">
+            <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                <source src="static/videos/videoDumbell.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+</main>
+
+<!-- JAVASCRIPT FILES -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/init.js') }}"></script>
+
+</body>
 </html>
-{% endblock content %}

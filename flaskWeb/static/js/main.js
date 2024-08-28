@@ -1,3 +1,5 @@
+
+//Blurs and highlights inputed areas
 const inputs = document.querySelectorAll(".input");
 
 function addClass() {

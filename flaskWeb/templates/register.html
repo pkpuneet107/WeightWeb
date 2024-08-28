@@ -1,124 +1,117 @@
-{% extends "layout.html" %}
-
-{% block content %}
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Animated Register Form</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/color.css') }}" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>WeightLossTracker | Register or Create an account</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200&family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/tooplate-kool-form-pack.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="login-content">
-            <form method="POST" action="">
-                {{ form.hidden_tag() }}
-                <img src="{{ url_for('static', filename='images/avatar.png') }}" class="avatarpic" />
-                <br><br>
-                <div class="input-div name">
-                    <div class="i">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="div">
-                        {{ form.name.label(class="form-control-label") }}
-                        {% if form.name.errors %}
-                            {{ form.name(class="input is-invalid") }}
-                            <div class="invalid-feedback">
-                                {% for error in form.name.errors %}
-                                    <span>{{ error }}</span>
-                                {% endfor %}
-                            </div>
-                        {% else %}
-                            {{ form.name(class="input") }}
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="input-div one">
-                    <div class="i">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="div">
-                        {{ form.username.label(class="form-control-label") }}
-                        {% if form.username.errors %}
-                            {{ form.username(class="input is-invalid") }}
-                            <div class="invalid-feedback">
-                                {% for error in form.username.errors %}
-                                    <span>{{ error }}</span>
-                                {% endfor %}
-                            </div>
-                        {% else %}
-                            {{ form.username(class="input") }}
-                        {% endif %}
-                    </div>
-                </div>
-                <!-- Repeat the structure above for each input needed for registration (email, password, etc.) -->
-                <div class="input-div one">
-                    <div class="i">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="div">
-                        {{ form.email.label(class="form-control-label") }}
-                        {% if form.email.errors %}
-                            {{ form.email(class="input is-invalid") }}
-                            <div class="invalid-feedback">
-                                {% for error in form.email.errors %}
-                                    <span>{{ error }}</span>
-                                {% endfor %}
-                            </div>
-                        {% else %}
-                            {{ form.email(class="input") }}
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="input-div pass">
-                    <div class="i">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div class="div">
-                        {{ form.password.label(class="form-control-label") }}
-                        {% if form.password.errors %}
-                            {{ form.password(class="input is-invalid") }}
-                            <div class="invalid-feedback">
-                                {% for error in form.password.errors %}
-                                    <span>{{ error }}</span>
-                                {% endfor %}
-                            </div>
-                        {% else %}
-                            {{ form.password(class="input") }}
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="input-div pass">
-                    <div class="i">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div class="div">
-                        {{ form.confirm_password.label(class="form-control-label") }}
-                        {% if form.confirm_password.errors %}
-                            {{ form.confirm_password(class="input is-invalid") }}
-                            <div class="invalid-feedback">
-                                {% for error in form.confirm_password.errors %}
-                                    <span>{{ error }}</span>
-                                {% endfor %}
-                            </div>
-                        {% else %}
-                            {{ form.confirm_password(class="input") }}
-                        {% endif %}
-                    </div>
-                </div>
-                <input type="submit" class="btn" value="Sign Up" />
-                <div class="bottom-text">
-                    <small class="text-muted">
-                        Already Have An Account? <a href="{{ url_for('login') }}">Sign In</a>
-                    </small>
-                </div>
-            </form>
-        </div>
-    </div>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
 
+    <main>
+
+        <header class="site-header">
+            <div class="container">
+                <div class="row justify-content-between">
+
+                    <div class="col-lg-12 col-12 d-flex">
+                        <a class="site-header-text d-flex justify-content-center align-items-center me-auto">
+                            <i class="bi-box"></i>
+                            <span>WeightLossTracker | Register</span>
+                        </a>
+
+                        <a class="bi-list offcanvas-icon" data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu"></a>
+
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">                
+            <div class="offcanvas-header">                    
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center">
+                <nav>
+                    <ul>
+                        <li><a href="{{ url_for('login', _external=True) }}">Login</a></li>                        
+                        <li><a href="{{ url_for('register') }}">Register</a></li>                        
+                        <li><a href="password-reset.html">Password Reset</a></li>
+                        <li><a href="404.html">404 Page</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <section class="hero-section d-flex justify-content-center align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-12 mx-auto">
+                        <form class="custom-form" role="form" method="POST">
+                            <h2 class="hero-title text-center mb-4 pb-2">Create an account</h2>
+                            <div class="row">
+                                {{ form.hidden_tag() }}
+                                <div class="col-lg-12 col-12">
+                                    <div class="form-floating">
+                                        {{ form.username(class="form-control", id="name", placeholder="Name", required=true) }}
+                                        <label for="name">Full Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-12">
+                                    <div class="form-floating">
+                                        {{ form.email(class="form-control", id="email", placeholder="Email address", required=true) }}
+                                        <label for="email">Email address</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-12">
+                                    <div class="form-floating">
+                                        {{ form.password(class="form-control", id="password", placeholder="password", required=true) }}
+                                        <label for="password">Password</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-12">
+                                    <div class="form-floating">
+                                        {{ form.confirm_password(class="form-control", id="confirm_password", placeholder="Confirm Password", required=true) }}
+                                        <label for="confirm_password">Confirm Password</label>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-lg-5 col-md-5 col-5 ms-auto">
+                                        <button type="submit" class="form-control">Submit</button>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-7">
+                                        <p class="mb-0">Already have an account? <a href="{{ url_for('login') }}" class="ms-2">Login</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-wrap">
+                <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                    <source src="{{ url_for('static', filename='videos/videoDumbell.mp4') }}" type="video/mp4">
+                </video>
+            </div>
+        </section>
+    </main>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/init.js') }}"></script>
 </body>
 </html>
-{% endblock content %}

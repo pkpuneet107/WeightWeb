@@ -208,6 +208,12 @@ a:hover {
   padding: 10px;
   text-align: center;
 }
+.flashNoInfo{
+  font-weight: bold;
+  display:block;
+  color: white;
+  margin-bottom: 5px;
+}
 
 .metric-title {
   font-weight: bold;

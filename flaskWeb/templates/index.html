@@ -1,45 +1,83 @@
-{% extends 'layout.html' %}
-
-{% block title %}
-    Welcome
-{% endblock %}
-
-{% block content %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Kool Form Pack | Coming Soon Page</title>
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200&family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/tooplate-kool-form-pack.css') }}" rel="stylesheet">
+    <!-- Tooplate 2136 Kool Form Pack -->
+    <!-- https://www.tooplate.com/view/2136-kool-form-pack -->
+    <!-- Bootstrap 5 Form Pack Template -->
+</head>
+<body>
     <main>
-        {% for item in values %}
-        <div class="intro">Hello, {{item.name}}</div>
-        {% endfor %}
-        <section class="user-info">
-            {% for item in values %}
-
-            <h2>Your Health Metrics</h2>
-            <div class="metrics">
-                <div class="metric">
-                    <span class="metric-title">Calorie Goal:</span>
-                    <span class="metric-value">{{ item.new_calorie_goal| int }} kcal/day</span>
+        <header class="site-header">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-12 col-12 d-flex align-items-center">
+                        <a class="site-header-text d-flex justify-content-center align-items-center me-auto" href="index.html">
+                            <i class="bi-person"></i>
+                            <span>WeightLossTracker | Home Page</span>
+                        </a>
+                        <div>
+                            <a href="#" class="custom-btn custom-border-btn btn" data-bs-toggle="modal" data-bs-target="#subscribeModal">Notify me
+                                <i class="bi-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                        <a class="bi-list offcanvas-icon" data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu"></a>
+                    </div>
                 </div>
-                <div class="metric">
-                    <span class="metric-title">Protein Macros:</span>
-                    <span class="metric-value">{{ item.protein_macros| int }} grams</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-title">Fat Macros:</span>
-                    <span class="metric-value">{{ item.fat_macros| int }} grams</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-title">Carb Macros:</span>
-                    <span class="metric-value">{{ item.carb_macros| int }} grams</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-title">Weeks to Goal:</span>
-                    <span class="metric-value">{{ item.weeks_to_goal| int }}</span>
-                </div>
-                {% if item.new_calorie_goal == 0 %}
-                <p>Need to be in a class</p>
-                {% endif %}
             </div>
-            {% endfor %}
+        </header>
+        <!-- Offcanvas Menu -->
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">                
+            <div class="offcanvas-header">                    
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center">
+                <nav>
+                    <ul>
+                        <li><a href="{{ url_for('login',  _external=True) }}">Login</a></li>                        
+                        <li><a href="{{ url_for('register') }}">Register</a></li>                        
+                        <li><a href="password-reset.html">Password Reset</a></li>
+                        <li><a href="404.html">404 Page</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- End Offcanvas Menu -->
+
+        <!-- Your content goes here -->
+        <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-13 mx-auto">
+
+                        <h1 class="text-white mt-2 mb-4 pb-2">Welcome!</h1>
+                        <ul class="countdown d-flex flex-wrap align-items-center"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="video-wrap">
+                <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                    <source src="static/videos/videoDumbell.mp4" type="video/mp4">
+                </video>
+            </div>
         </section>
     </main>
-{% endblock %}
+    <!-- JAVASCRIPT FILES -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/init.js') }}"></script>
+</body>
+</html>
